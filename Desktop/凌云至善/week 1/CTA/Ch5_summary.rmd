@@ -1,0 +1,69 @@
+\usepackage{xeCJK}
+library(pandoc)
+
+---
+title: "Summary of Trend Following with Managed Futures - Chapter 5"
+author: "Sida.Li"
+date: "May 11th, 2017"
+output: pdf_document
+---
+
+##Chapter-5 Divergence and the Tradability of Trend
+
+###Some key concepts
+* CTA       £º Commodity Trading Advisor
+* Convergence
+* Divergence
+* Convexity £º A measurement of output against input. (Positive convexity means something like lottery)
+* SNR
+* MDI
+* Trend Leakage
+
+
+###Topics,Ideas&contents of this charpter
+
+Item  Topics                                                Contents                                        Remark 
+---   ---------------------------                           ------------------------------                  ----------       
+1.    Risk vs Uncertainty                                    The defination of Risk and Uncertainty
+2.    Convergence vs Divergence                              Describe two diffrent live/trading strategies
+3.    Measuring Market Divergence                            The calculation of SNR/MDI
+4.    Testing the Stationarity of Market Divergence          Emperical test on the MDI
+5.    The Tradability of Trend                               Emperial test on Trend Leakage
+6.    The importance of Entry vs.Exit                            TBD
+---  ---------------------------                            -----------------------------                  ----------
+
+
+###Risk vs Uncertainty
+
+It will be quite essential for researchers to sort out the differences between the concepts of Risk and Uncertainty.
+In general, **Risk** is defined as as the chance that things will not turn as you expect (prices run against you).**Uncertainty** represents the situation that the outcome of things is knownown.
+
+Risk is knowable and uncertainty is not.
+
+###Convergence and Divergence
+
+The two idea about the very world we are living in dictates how we make decisions. CTA is widely accepted as a divergence strategy.
+
+A convvergence believer have faith in the system and believe outcomes are predictable, while divergence believer will always skeptical
+about what is stable and what isn't.
+
+As a result convergence strategies often come with many small gains and occasionally catastrophic losses. Divergence strategies in the other hand, bets heavy on the favor trend and cut losses quickly, which means they often result in many small losses and occasionally big
+wins.
+
+###Measuring Divergence
+
+Basically, measuring divergence equals to measuring uncertainty£¬ which means the volatility of certain asset that cannot be explained by models
+
+To measure the uncertainty of certain asset we can use RUR(Risk to Uncertainty Ratio),it gives the divergence characteristic of certain market/asset and thus provide intuitive insights about wether we should apply divergence strategies:
+
+$$
+\tag{1}   {RUR} = \frac{Explained Volatility}{Unexplained Volatility} = \frac {Explained volatility} {Total volatility - Explained volatility}
+$$
+
+###Measuring Divergence at Portfolio Level
+
+The other way(or maybe a more pratical way) to measure market divergence is to apply SNR ratio:
+$$
+\tag{2}   {SNR} = \frac{|P_t - P_{t-n}|}{\sum_{k=0}^{n-1}|P_{t-k}-P_{t-k-1}|}
+$$
+A straight forward explanation of this formula would be: assuming trends are always linear, then all deviation from the linear line $P_{t-k}-P_{t-k-1}$ 
